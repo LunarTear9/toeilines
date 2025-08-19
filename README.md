@@ -10,4 +10,4 @@ Supported Lines: Asakusa, Shinjuku, Oedo, Mita.
 Sakura Tram is partially supported for now
 
 
-Private message for commented code version!
+PM for commented code version, thank you!
