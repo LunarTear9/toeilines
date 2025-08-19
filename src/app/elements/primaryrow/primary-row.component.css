@@ -1,0 +1,36 @@
+/* host styles ---------------------------------------------------------- */
+:host {
+  display: block;
+  background: var(--primary-color, #c8102e); /* fallback if var missing  */
+  color: #b11f1f;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;                       /* purely cosmetic          */
+  width: 80%;    
+  height: 40;      
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;                    /* so centring works nicely */
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* flex row ------------------------------------------------------------- */
+.row {
+  display: flex;
+  flex-wrap: wrap;      /* children wrap to a new line if space runs out */
+  justify-content: space-around; /* centre items horizontally */
+  align-items: center;
+  gap: 1rem;            /* breathing room between items                 */
+}
+
+/* optional: make images / buttons adapt gracefully -------------------- */
+.row > * {
+  max-width: 100%;
+}
+
+/* responsive tweak: add vertical gap when the row wraps --------------- */
+@media (max-width: 480px) {
+  .row {
+    gap: .75rem;
+  }
+}

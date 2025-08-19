@@ -1,0 +1,20 @@
+<div class="clock-wrapper">
+    <div class="glass-card">
+        <!-- time & date -->
+        <h2 class="time">{{ currentTime | date:'HH:mm:ss' : '+0900' }}</h2>
+        <p class="date">{{ currentTime | date:'yyyy/MM/dd' : '+0900' }}</p>
+
+        <!-- weather block -->
+        <div class="weather" *ngIf="temperature != null || precipitation != null">
+            <span *ngIf="temperature != null">
+                <span class="material-icons" aria-label="temperature">device_thermostat</span>
+                {{ temperature | number:'1.0-0' }} °C
+            </span>
+
+            <span *ngIf="precipitation != null">
+                <span class="material-icons" aria-label="precipitation">umbrella</span>
+                {{ precipitation | number:'1.1-1' }} mm
+            </span>
+        </div>
+    </div>
+</div>

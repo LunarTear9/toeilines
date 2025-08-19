@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --app-primary-color: #C8102E;  
+}
+
+
+header.app-header {
+  background: var(--app-primary-color);
+  color: rgb(197, 40, 40);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+body, button {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+
+:root {
+  --app-primary: #C8102E;       
+}
+
+
+.app-header {
+  background: var(--app-primary);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+  color: #fff;
+}
+
+.size-btn-row {
+  display: flex;
+  gap: 8px;
+}
+
+
+.circle-btn,
+.action-btn {
+  width: 40px;
+  height:40px;
+  border: none;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+
+.circle-btn:hover,
+.action-btn:hover   { transform: scale(1.15); background: #e0e0e0; }
+.circle-btn:active,
+.action-btn:active  { transform: scale(0.90); }
+
+.search-input {
+
+  width: 200px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+
+.material-icons { font-size: 20px; }
+
+

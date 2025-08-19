@@ -1,0 +1,31 @@
+.hero__clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  
+}
+.clock-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;          /* full-screen centre */
+}
+
+/* glass effect */
+.glass-card {
+  background: rgba(255,255,255,.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31,38,135,.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 40px 60px;
+  min-width: 300px;
+  text-align: center;
+}
+
+.time { margin: 0; font-size: 4.5rem; font-weight: 700; color: #333; letter-spacing: 2px; }
+.date { margin: 10px 0 20px; color: #555; }
+.weather { font-size: 1.1rem; display: flex; gap: 1.5rem; justify-content: center; color: #222; }

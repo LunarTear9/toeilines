@@ -1,0 +1,31 @@
+<div *ngIf="raw.length === 0" class="loading">Fetching trains…</div>
+
+<div class="dropdown-wrapper" *ngIf="raw.length">
+  <h3 style="font-size: 1.25rem; font-weight: 600; color: white">Live Trains ({{ trains.length }})</h3>
+
+<select [ngModel]="selectedId" (ngModelChange)="onSelect($event)">
+    <option
+      *ngFor="let t of trains"
+      [value]="t.id"
+      [ngStyle]="{'--icon': 'url(' + t.icon + ')'}">
+      {{ t.number }} · {{ t.station }} ·
+      {{ t.delay ? ('+' + t.delay + ' s') : 'On time' }}
+    </option>
+  </select>
+
+  <p *ngIf="trains.length === 0" class="no-match">No matches</p>
+<ul class="demo-list" [@listAnim]>
+  <li *ngFor="let d of demoTrains;"
+      class="tile"
+      [@tileAnim]="d.delay">
+    <img [src]="d.icon" [alt]="d.line" class="tile-icon">
+    <div class="tile-main">
+      <span class="tile-number">{{ d.number }}</span>
+      <span class="tile-station">{{ d.station }}</span>
+    </div>
+    <span class="tile-delay" [class.late]="d.delay">
+      {{ d.delay ? ('+' + d.delay + ' s') : 'On time' }}
+    </span>
+  </li>
+</ul>
+</div>

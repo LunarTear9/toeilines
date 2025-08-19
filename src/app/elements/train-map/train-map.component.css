@@ -1,0 +1,13 @@
+.map-wrapper {
+  background: var(--app-primary-color);
+  padding: 16px;
+  border-radius: 20px;
+  width: 100%;
+  overflow: hidden;         
+}
+
+google-map {
+  display: block;          
+
+  border-radius: inherit;   
+}

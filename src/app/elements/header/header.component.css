@@ -1,0 +1,27 @@
+.btn-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.action-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background: white;
+  color: var(--app-primary-color);
+  cursor: pointer;
+
+  /* transition keeps the grow/shrink smooth */
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.action-btn:hover,
+.action-btn:focus-visible {
+  transform: scale(1.12);          /* enlarge */
+  box-shadow: 0 4px 10px rgba(0,0,0,.18);
+}
+
+.action-btn:active {
+  transform: scale(0.96);          /* shrink slightly on press */
+}

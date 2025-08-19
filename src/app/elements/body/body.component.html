@@ -1,0 +1,13 @@
+<li class="hero" style="height: 145vh">
+  <img class="hero__bg" src="/assets/background-image.jpg" alt="">
+  <app-clock class="hero__clock"></app-clock>
+  <app-primary-row>
+   
+
+<app-train-map [trains]="live.trains" [selectedTrain]="selectedTrain"></app-train-map>
+
+  <div class="map-area">
+   <app-live-trains (trainSelected)="selectedTrain = $event" #live></app-live-trains>
+    </div>
+  </app-primary-row>
+</li>

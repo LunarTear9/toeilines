@@ -1,0 +1,106 @@
+/* ------------- base (mobile-first) ----------------------------------- */
+.hero {
+  display: flex;          /* column stack on phones                  */
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(16px);
+  z-index: 0;
+}
+
+.hero__clock,
+.google-map {
+  position: relative;     /* sit above the picture                   */
+  z-index: 1;
+            /* leave a little margin                   */
+
+}
+
+/* clock component ----------------------------------------------------- */
+.clock-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;           /* shrink to content on phones             */
+}
+
+.glass-card {
+  background: rgba(255,255,255,.25);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 24px 32px;
+  text-align: center;
+}
+
+.time   { margin: 0; font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 700; }
+.date   { margin: 8px 0 16px; font-size: .9rem; }
+.weather{ display: flex; gap: 1rem; justify-content: center; font-size: .95rem; }
+
+/* map wrapper --------------------------------------------------------- */
+.google-map {
+  aspect-ratio: 16 / 9;    /* roughly 75 % height of width            */
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+/* ------------- tablet & up ------------------------------------------ */
+/* ------------- tablet & up ------------------------------------------ */
+@media (min-width: 768px) {
+
+  /* two-row grid: clock on row-1, map on row-2 -------------------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;   /* row-1 grows to fit clock        */
+    place-items: center;            /* centres both rows horizontally  */
+  }
+
+  /* row assignments (implicit column = 1) ------------------------- */
+  .hero__clock { grid-row: 1; }
+  .google-map  { grid-row: 2; }
+
+  /* size tweaks --------------------------------------------------- */
+  .hero__clock { width: max-content; }
+
+  .google-map  {
+    justify-self: start;
+    
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    margin-top: 2rem;
+
+  }
+
+  .glass-card { padding: 40px 60px; }
+  .date       { font-size: 1rem;    }
+  .weather    { font-size: 1.05rem; }
+}
+
+.interface {
+  background-color: var(--app-primary-color);
+  padding: 16px;
+  border-radius: 8px;
+  width: 100%;
+  z-index: 1;
+}
+.map-area {
+  align-items: center;
+  flex: 1;
+  min-width: 200px;
+  height: 100%;
+}
