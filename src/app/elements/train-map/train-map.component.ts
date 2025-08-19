@@ -55,7 +55,7 @@ export class TrainMapComponent implements OnInit, OnChanges {
   };
 
   async ngOnInit(): Promise<void> {
-    await this.mapsLoader.load('AIzaSyCZVdphh7b21iBd58mVpOuItK6E9HjgDvw');
+    await this.mapsLoader.load('API_KEY');
     this.options = {
       mapTypeId: 'roadmap',
       styles: DARK_STYLE,
